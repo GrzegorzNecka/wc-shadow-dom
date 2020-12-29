@@ -4,14 +4,13 @@ class Greeting extends HTMLElement {
     // this.innerText = `Hello, macieju`;
 
     this.shadow = this.attachShadow({ mode: "open" });
-    this.text = document.createElement("span");
-
+    this.text = document.createElement("p");
     this.text.innerHTML = "text shadow dom";
     this.shadow.appendChild(this.text);
   }
   connectedCallback() {
     this.text.innerHTML = `<style> span {color: blue } </style>
-    text shadow dom odizolowany stylami`;
+    <span>text shadow dom odizolowany stylami</span>`;
   }
 }
 
